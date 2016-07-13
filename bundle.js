@@ -22522,9 +22522,9 @@ module.exports = require('./lib/React');
 
 },{"./lib/React":83}],200:[function(require,module,exports){
 var React = require('react');
-var ReactDom = require('react-dom');
+var ReactDOM = require('react-dom');
 var axios = require('axios');
-var Typeahead = require('react-typeahead');
+var Typeahead = require('react-typeahead').Typeahead;
 
 
 var AddressForm = React.createClass({displayName: "AddressForm",
@@ -22600,12 +22600,12 @@ var AddressForm = React.createClass({displayName: "AddressForm",
 });
 
 class App extends React.Component {
-  render () {
+  render() {
     return React.createElement(AddressForm, null);
   }
 }
 
-render(React.createElement(App, null), document.getElementById('app'));
+ReactDOM.render(React.createElement(App, null), document.getElementById('app'));
 
 },{"axios":1,"react":199,"react-dom":49,"react-typeahead":52}],201:[function(require,module,exports){
 // shim for using process in browser
