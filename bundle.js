@@ -22537,11 +22537,12 @@ var AddressForm = React.createClass({displayName: "AddressForm",
   getSuburbs: function(addrQueryStr) {
   	 axios
       .get(
-        `https://digitalapi.auspost.com.au/postcode/search.json?q=${addrQueryStr}`,
+        `https://developers.auspost.com.au/backend/proxy/get/pac/postcode/search.json?q=q=${addrQueryStr}`,
+        //`https://digitalapi.auspost.com.au/postcode/search.json?q=${addrQueryStr}`,
         {
           headers: {
             'auth-key': '872608e3-4530-4c6a-a369-052accb03ca8',
-            'Content-Type': 'application/x-www-form-urlencoded'
+            'Content-Type': 'plain/text'
           }
         }
       )
