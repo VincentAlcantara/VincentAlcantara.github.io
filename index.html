@@ -1,11 +1,46 @@
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>Lawpath Technical Test</title>
-    <link rel="stylesheet" type="text/css" href="styles.css">
-  </head>
-  <body>
-    <div id="app"></div>
-    <script src="bundle.js" type="text/javascript"></script>
-  </body>
-</html>
+<head>
+  <meta charset="utf-8">
+  <title>Practify Showcase</title>
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+</head>
+<body>
+  <h2>Using mailto in a link</h2>
+  <select id="emailTemplateOptions" name="template" onchange="emailTemplate()">
+   <option value="" disabled selected>Select a template</option>
+    <option value="mailto:?subject=Birthday Reminder&body=Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper ultricies nisi. Nam eget dui. Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales sagittis magna. Sed consequat, leo eget bibendum sodales, augue velit cursus nunc, quis gravida magna mi a libero. Fusce vulputate eleifend sapien. Vestibulum purus quam, scelerisque ut, mollis sed, nonummy id, metus. Nullam accumsan lorem in dui. Cras ultricies mi eu turpis hendrerit fringilla. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; In ac dui quis mi consectetuer lacinia. Nam pretium turpis et arcu. Duis arcu tortor, suscipit eget, imperdiet nec, imperdiet iaculis, ipsum. Sed aliquam ultrices mauris. Integer ante arcu, accumsan a, consectetuer eget, posuere ut, mauris. Praesent adipiscing. Phasellus ullamcorper ipsum rutrum nunc. Nunc nonummy metus. Vestib">Birthday Greeting</a></option>
+    <option value="mailto:?subject=Follow Up&body=Hi,%0A%0AJust a quick follow up regarding the meeting today.">Follow Up</a></option>
+  </select>
+  <a id="emailButton" href="" >Email</a>
+  <h2>Using mailto in a form</h2>
+  <form action="mailto:tacoman@davesite.com" method="POST" enctype="text/plain"><br>
+
+    <p>Choose your template<br>
+      <select name="body">
+        <option value="Just a follow up on our previous meeting.  We would like to set up a time.">Follow Up</option>
+        <option value="Hi, My Name is Vincent.  Let's do business.">Introduction</option>
+        <option value="Happy Birthday.  Have you bought a cake?">Happy Birthday</option>
+      </select>
+
+      <p><input type="submit" alt="Email">
+
+      </form>
+    </body>
+    <script type="text/javascript">
+      function emailTemplate() {
+        console.log('updating template link');
+        var selection = document.getElementById("emailTemplateOptions").value;
+        console.log('selection:', selection);
+        document.getElementById("emailButton").href = selection;
+      }
+    </script>
+    </html>
