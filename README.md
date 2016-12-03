@@ -1,28 +1,19 @@
-# So Simple Theme
+## Jekyll Documentation theme
 
-Looking for a simple, responsive, theme for your Jekyll powered blog? Well look no further. Here be **So Simple Theme**, the followup to [**Minimal Mistakes**](http://mmistakes.github.io/minimal-mistakes/) -- by designer slash illustrator [Michael Rose](http://mademistakes.com).
+Build the site to see the instructions for using it. Or just go here: [http://idratherbewriting.com/documentation-theme-jekyll/](http://idratherbewriting.com/documentation-theme-jekyll/)
 
-## Notable features:
+## Running the site in Docker
 
-* Compatible with Jekyll 3 and GitHub Pages.
-* Responsive templates. Looks good on mobile, tablet, and desktop devices.
-* Gracefully degrading in older browsers. Compatible with Internet Explorer 9+ and all modern browsers.
-* Minimal embellishments and subtle animations.
-* Optional large feature images for posts and pages.
-* [Custom 404 page](http://mmistakes.github.io/so-simple-theme/404.html) to get you started.
-* Basic [search capabilities](https://github.com/mathaywarduk/jekyll-search)
-* Support for Disqus Comments
+You can also use Docker to directly build and run the site on your local machine. Just clone the repo and run the following from your working dir:
 
-![screenshot of So Simple Theme](http://mmistakes.github.io/so-simple-theme/images/so-simple-theme-preview.jpg)
+```
+docker build --no-cache -t mydocs .
+```
 
-See a [live version of So Simple](http://mmistakes.github.io/so-simple-theme/) hosted on GitHub.
+Once the build is complete, you can mount and run the whole site as follows:
 
----
+```
+docker run -v "$PWD:/src" -p 4000:4000 mydocs serve -H 0.0.0.0
+```
+This is perhaps the easiest way to see how your site would actually look.
 
-## Getting Started
-
-So Simple takes advantage of Sass and data files to make customizing easier and requires Jekyll 3.x.
-
-To learn how to install and use this theme check out the [Setup Guide](http://mmistakes.github.io/so-simple-theme/theme-setup/) for more information.
-
-[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/mmistakes/so-simple-theme/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
